@@ -8,6 +8,14 @@
 // Example:
 // reverse("skoob") --> "books"
 
+function reverse (str) {
+    var splitString = str.split('');
+    var reverseArr = splitString.reverse();
+    var joinArr = reverseArr.join('');
+    return joinArr;
+
+}
+
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -18,6 +26,13 @@
 // Example:
 // findLongestWord('a book full of dogs') --> 'book'
 
+function findLongestWord (str) {
+    var strSplit = str.split(' ');
+    var longestWord = strSplit.sort(function(a, b) {
+        return b.length - a.length;
+    })
+    return longestWord[0];
+}
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -29,7 +44,10 @@
 // nicer('mom get the heck in here and bring me a darn sandwich.')
 // > 'mom get the in here and bring me a sandwich.'
 
-
+function nicer (dirtySentence) {
+    var forbiddenWords = [heck, darn, dang, crappy];
+    var sentenceCheck = dirtySentence.search(forbiddenWords);
+}
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function called "capitalizeAll"
@@ -40,7 +58,15 @@
 // capitalizeAll('hello world') --> 'Hello World'
 // capitalizeAll('every day is like sunday') --> 'Every Day Is Like Sunday'
 
+function capitalizeAll (str) {
+    str = str.split(' ');
+    let result = [];
 
+    for (let word of str) {
+        result.push(word[0].toUpperCase() + word.slice(1));
+    }
+    return result.join(' ');
+}
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function called "split" that does the same thing as String.split
@@ -52,3 +78,7 @@
 // split('a-b-c', '-') --> ['a', 'b', 'c']
 // split('APPLExxBANANAxxCHERRY', 'xx') --> ['APPLE', 'BANANA', 'CHERRY']
 // split('xyz', 'r') --> ['xyz']
+
+function split (strToSplit) {
+
+}
