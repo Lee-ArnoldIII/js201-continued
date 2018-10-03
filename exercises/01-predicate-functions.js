@@ -64,25 +64,19 @@ function isVowel (userInput) {
 
 function isEven (num) {
     if (num % 2 === 0) {
-        return 'true';
+        return true;
     }
-    else if (num == '') {
-        return 'false';
-    }
-    else return 'false'
+    else return false;
   
 } 
 
 
 
 function isOdd (num) {
-    if (num % 2 === 1) {
-        return 'true';
+    if (num % 2 === 1 || -1) {
+        return true;
     }
-    else if (num == '') {
-        return 'false';
-    }
-    else return 'false'
+    else return false;
 
 }
 

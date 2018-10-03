@@ -79,6 +79,20 @@ function capitalizeAll (str) {
 // split('APPLExxBANANAxxCHERRY', 'xx') --> ['APPLE', 'BANANA', 'CHERRY']
 // split('xyz', 'r') --> ['xyz']
 
-function split (strToSplit) {
+function split (str, delimiter) {
+let resultArray = []
 
+let delimiterIdx = str.indexOf(delimiter)
+while (delimiterIdx !== -1) {
+    const chunk = str.substring(0, delimiterIdx)
+    resultArray.push(chunk)
+    
+    str = str.substring(chunk.length)
+    str = str.substring(delimiter.length)
+
+    delimiterIdx = str.indexOf(delimiter)
+}
+resultArray.push(str)
+
+return resultArray
 }
